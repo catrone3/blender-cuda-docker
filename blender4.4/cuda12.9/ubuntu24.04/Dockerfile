@@ -9,7 +9,7 @@ RUN apt-get update && \
 	apt-get install -y \
 		curl wget nano \
 		bzip2 libfreetype6 libgl1-mesa-dev \
-		libglu1-mesa \
+		libglu1-mesa\
 		libxi6 libxrender1 && \
 	apt-get -y autoremove
 
@@ -17,6 +17,8 @@ RUN apt-get update && \
 
 RUN mkdir /usr/local/blender && \
 	wget ${BLENDER_TAR_URL} -O blender.tar.xz && \
+	ls -la && \
+	sleep 5 && \
 	tar -xvf blender.tar.xz -C /usr/local/blender --strip-components=1 && \
 	rm blender.tar.xz
 
