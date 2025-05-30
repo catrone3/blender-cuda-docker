@@ -1,5 +1,5 @@
 FROM nvidia/cuda:12.9.0-cudnn-devel-ubuntu24.04
-LABEL catrone3
+LABEL org.opencontainers.image.authors="catrone3"
 
 ENV BLENDER_MAJOR=4.4
 ENV BLENDER_VERSION=4.4.0
