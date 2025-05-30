@@ -1,9 +1,9 @@
 FROM nvidia/cuda:12.9.0-cudnn-devel-ubuntu24.04
-MAINTAINER catrone3
+LABEL catrone3
 
-ENV BLENDER_MAJOR 4.4
-ENV BLENDER_VERSION 4.4.0
-ENV BLENDER_TAR_URL https://download.blender.org/release/Blender${BLENDER_MAJOR}/blender-${BLENDER_VERSION}-linux64.tar.xz
+ENV BLENDER_MAJOR=4.4
+ENV BLENDER_VERSION=4.4.0
+ENV BLENDER_TAR_URL=https://download.blender.org/release/Blender${BLENDER_MAJOR}/blender-${BLENDER_VERSION}-linux64.tar.xz
 
 RUN apt-get update && \
 	apt-get install -y \
@@ -15,10 +15,10 @@ RUN apt-get update && \
 
 # Install blender
 
-RUN mkdir /usr/local/blender && \
-	wget --quiet ${BLENDER_TAR_URL} -O blender.tar.xz && \
-	tar -xvf blender.tar.xz -C /usr/local/blender --strip-components=1 && \
-	rm blender.tar.xz
+RUN mkdir /usr/local/blender
+RUN wget --quiet ${BLENDER_TAR_URL} -O blender.tar.xz
+RUN tar -xvf blender.tar.xz -C /usr/local/blender --strip-components=1
+RUN rm blender.tar.xz
 
 
 VOLUME /media
