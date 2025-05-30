@@ -16,7 +16,7 @@ RUN apt-get update && \
 # Install blender
 
 RUN mkdir /usr/local/blender && \
-	wget --quiet ${BLENDER_TAR_URL} -O blender.tar.xz && \
+	wget ${BLENDER_TAR_URL} -O blender.tar.xz && \
 	tar -xvf blender.tar.xz -C /usr/local/blender --strip-components=1 && \
 	rm blender.tar.xz
 
