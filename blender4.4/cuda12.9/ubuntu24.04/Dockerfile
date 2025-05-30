@@ -16,9 +16,9 @@ RUN apt-get update && \
 # Install blender
 
 RUN mkdir /usr/local/blender && \
-	wget ${BLENDER_TAR_URL} -O blender.tar.xz && \
-	tar -xvf blender.tar.xz -C /usr/local/blender && \
-	rm blender.tar.xz
+	wget ${BLENDER_TAR_URL} && \
+	tar -xvf blender-${BLENDER_VERSION}-linux-x64.tar.xz -C /usr/local/blender --strip-components=1 && \
+	rm blender-${BLENDER_VERSION}-linux-x64.tar.xz
 
 
 VOLUME /media
