@@ -3,7 +3,7 @@ LABEL org.opencontainers.image.authors="catrone3"
 
 ENV BLENDER_MAJOR=4.4
 ENV BLENDER_VERSION=4.4.0
-ENV BLENDER_TAR_URL=https://download.blender.org/release/Blender${BLENDER_MAJOR}/blender-${BLENDER_VERSION}-linux64.tar.xz
+ENV BLENDER_TAR_URL=https://download.blender.org/release/Blender${BLENDER_MAJOR}/blender-${BLENDER_VERSION}-linux-x64.tar.xz
 
 RUN apt-get update && \
 	apt-get install -y \
