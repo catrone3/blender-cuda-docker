@@ -15,10 +15,10 @@ RUN apt-get update && \
 
 # Install blender
 
-RUN mkdir /usr/local/blender
-RUN wget --quiet ${BLENDER_TAR_URL} -O blender.tar.xz
-RUN tar -xvf blender.tar.xz -C /usr/local/blender --strip-components=1
-RUN rm blender.tar.xz
+RUN mkdir /usr/local/blender && \
+	wget --quiet ${BLENDER_TAR_URL} -O blender.tar.xz && \
+	tar -xvf blender.tar.xz -C /usr/local/blender --strip-components=1 && \
+	rm blender.tar.xz
 
 
 VOLUME /media
